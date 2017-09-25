@@ -46,10 +46,17 @@
         <js-module src="www/nativeaudio.js" name="nativeaudio">
             <clobbers target="window.plugins.NativeAudio"/>
         </js-module>
+
         <config-file target="config.xml" parent="/*">
             <feature name="NativeAudio">
                 <param name="ios-package" value="NativeAudio"/>
             </feature>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="UIBackgroundModes">
+            <array>
+                <string>audio</string>
+            </array>
         </config-file>
 
         <framework src="Foundation.framework"/>
